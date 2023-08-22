@@ -1,0 +1,52 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+
+.btn-opt{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.my-card{
+    width: 460px;
+    text-align: center;
+}
+.todo-inp{
+    width: 200px !important;
+    margin-bottom: 3px;
+}
+li{
+    list-style: none;
+}
+.todos-list{
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height:  60vh;
+    overflow-y: scroll;
+    overflow-x: 0;
+    padding: 0.7rem;
+   margin-top: 0.7rem;
+}
+
+.todos-list {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.todos-list::-webkit-scrollbar {
+    width: 9px;               /* width of the entire scrollbar */
+  }
+  
+  .todos-list::-webkit-scrollbar-track {
+    background: #dadfe4;        /* color of the tracking area */
+  }
+  
+  .todos-list::-webkit-scrollbar-thumb {
+    background-color: #7d8083;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #7a7c7e;  /* creates padding around scroll thumb */
+  }
