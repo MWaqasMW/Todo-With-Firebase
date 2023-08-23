@@ -1,6 +1,4 @@
-
-import { collection, addDoc,query, onSnapshot , doc, deleteDoc ,getDocs , serverTimestamp,orderBy} from "https://www.gstatic.com/firebasejs/10.2.0/firebase-firestore.js";
-import {db} from './firebase.js'
+import {db, collection, addDoc,query, onSnapshot , doc, deleteDoc ,getDocs , serverTimestamp,orderBy,updateDoc} from './firebase.js'
 
 
 const addTodo= document.getElementById("addTodo")
@@ -53,6 +51,7 @@ todos.map((todo, index)=>{
         </div>
         <div class="btn-opt my-1">
         <button class="btn btn-danger" onclick="del('${todo.id}')" type="button">Delete</button>
+        <button class="btn btn-secondary" onclick="edit('${todo.id}')" type="button">Update</button>
         <span class="secondary">${time}</span>
         </div>
         </li>
@@ -87,5 +86,18 @@ let clearAllTodos= document.getElementById("clearAllTodos")
     }
 });
 
+
+let edit= async(id)=>{
+const todoRef = doc(db, "todos", id);
+let output = document.getElementById("output");
+console.log(output.value)
+await updateDoc(todoRef, {
+    value: output.value 
+});
+
+console.log(id)
+}
+
+window.edit=edit
 
 
